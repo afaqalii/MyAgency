@@ -1,0 +1,372 @@
+$MainFontColor:#000000;
+$ParaFontColor:#141414;
+$MainFontWeight:400;
+$ExtraBold:900;
+$MediumBold:700;
+$BackgroundColor:#F5F6FF;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+// ++++++++++++ HEADER PAGE STARTS HERE ++++++++++++++
+header {
+    height: 100vh;
+    background-image: url("images/VectorhomePage.png");
+    background-color: $BackgroundColor;
+
+.menu__items > li > a {
+    font-size: 20px;
+    padding:0 2em;
+    color: $MainFontColor;
+    font-weight: $MainFontWeight;
+}
+nav {
+    background-color: $BackgroundColor;
+    nav > h1 {
+        margin-left: -20px;
+    }
+    .nav__btn > button {
+        background-color: #D6383D;
+        color: white;
+        font-weight: $ExtraBold;
+        padding: .5em 1em ;
+        box-shadow: 0px 2.99332px 4.48998px rgba(255, 255, 255, 0.35);
+        border-radius: 30.6816px;
+    }
+    .menuBar {
+        display: none;
+    }
+}
+     .hero_content {
+        margin-top: -5em;
+     }
+    .hero_content > h1 > span  {
+        color: #D6383D;
+    }
+    .hero_content > button {
+        width: 179.08px;
+        background: #5700B6;
+        color: white;
+        font-weight: $ExtraBold;
+        box-shadow: 0px 2.96px 4.44px rgba(0, 0, 0, 0.35);
+        border-radius: 30.34px;height: 42.92px;
+    }
+.header_image {
+    margin-top: -5em;
+}
+}
+// ++++++++++++ ABOUT US PAGE STARTS HERE ++++++++++++++
+
+.about__section {
+    display: flex;
+    background-color: $BackgroundColor;
+    position: relative;
+    .about_section_vectors {
+            position: relative;
+            width: 100%;
+         img:nth-child(1) {
+            position: absolute;
+            width: 112.64px;
+            height: 112.64px;
+            left: 10%;
+            z-index: 1;
+         }
+         img:nth-child(2) {
+            position: absolute;
+            width: 500px;
+            top: 12%;            
+         }
+         img:nth-child(3) {
+            position: absolute;
+            top: 55%;
+            z-index: 1;
+         }
+         img:nth-child(4) {
+            position: absolute;
+            left: 0;
+            top: 50%;
+
+         }
+        
+    }
+    .about_section_content  {
+        position: absolute;
+        left: 20%;
+        .about_heading {
+            color: #2C2D36;
+            margin-left: -1em;
+        }
+        .about_para {
+            z-index: 2;
+        }
+    } 
+}
+
+// ++++++++++++ SERVICES WE PROVIDE PAGE STARTS HERE ++++++++++++++
+
+
+.services__section {
+    min-height: 100vh;
+    background: url(images/Left\ illustration.png), url(images/AI\ illustration\ peoplelast.png) bottom right,#D9D9D9;
+    background-repeat: no-repeat;
+    .services__body  {
+
+     h1 {
+        color: #5700B6;
+    }
+    .service_section {
+         width: 744px;
+         margin-bottom: 2em;
+        .service_section__head  {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;        
+            cursor: pointer;
+            padding: 20px 25px 30px 25px;
+            background: linear-gradient(180deg, rgba(245, 246, 255, 0.7) 0%, rgba(248, 248, 248, 0) 100%);
+            backdrop-filter: blur(10.5px);
+            /* Note: backdrop-filter has minimal browser support */            
+            border-radius: 20px;    
+            h3 {
+            font-size: 21px;
+            margin-left: 30px;
+            font-weight: bold;
+            flex: 2;
+           }
+            span {
+            float:  right;
+           }     
+        }
+        .service_body {
+            padding: 1em;
+            display: none;
+        }
+    }
+    
+}
+}
+
+// ++++++++++++ CONTACT US PAGE STARTS HERE ++++++++++++++
+
+
+.contact__section {
+    background: url("images/Last\ Graphic.png") no-repeat bottom left, url("images/VectorcontactDm.png") right center no-repeat,  #F5F5F5;
+    
+    .contact_section__heading  {
+         margin-left: 2em;
+        .one {
+            width: 71px;
+            height: 3px;
+            background-color: #D6383D;
+        }
+        .two {
+            width: 44px;
+            height: 3px;
+            background-color: #D6383D;
+            margin-left: 10px;
+            margin-right: 20px;
+        }
+         p {
+            color: #5700B6;
+         } 
+        
+    }
+    .contact_section__body { 
+        height: 100vh;
+        // .contact_section__bodyLeft {
+        //      .contact_section__bodyLeft_body {
+
+        //      }
+        // }
+        .contact_section__bodyRight {
+            .contact_section__bodyRight_contactForm {
+                background-color: #ffffff;
+                width: 555px;
+                height: 709px;
+                border-radius: 76px;
+                margin-top: -1em;
+               .contact-form-heading {
+                padding-top: 40px;
+               }
+                form {
+                    margin-top: -1.6em;
+                   input {
+                    height: 76px;
+                   }
+                   textarea {
+                    height: 140px;
+                   }
+                   button {
+                    background: linear-gradient(91.61deg, #9548E9 1.29%, #5700B6 98.03%);
+                    width: 444px;
+                    border-radius: 18px;
+                    color: white;
+                    // margin-top: em;
+                   }
+                   input, textarea {
+                    border-radius: 18px;
+                    background-color: #f3f3f3;
+                    width: 444px;
+                    padding: 10px;
+                   }
+                }
+            }
+        }
+    }
+    
+}
+.fa-paper-plane {
+    font-size: 5em;
+}
+.active {
+    transition: .3s ease-in;
+}
+footer {
+    background-color: $ParaFontColor;
+}
+
+
+
+// ++++++++++++ MEDIA QUERIES FOR MOBILE  STARTS HERE ++++++++++++++
+
+@media (max-width:425px) {
+    header {
+        nav {
+            
+            .menu__items {
+                display: none;
+            }
+            .nav__btn {
+                display: none;
+            }
+            .menuBar {
+            display: block;
+            .bar {
+                width: 30px;
+                height: 3px;
+                border-radius: 2px;
+                margin-top: 4px;
+                background-color: #000000;
+            }
+            
+         }
+        }
+       .hero {
+        .hero_content {
+            h1 {
+                font-size: 3em;
+                margin-top: 2em;
+                width: 100%;
+                padding: 0 10px;
+            }
+        }        
+       }
+       .header_image  {
+        display: none;
+    }
+    }
+    .about__section {
+        padding: 0;
+        .about_section_vectors  {
+            display: none;
+            img {
+                width: 100px;
+            }
+        }
+        .about_section_content {
+            width: 100%;
+            left: 5%;
+            p {
+                width: 90%;
+                margin-top:10px;
+                padding: 0;
+            }
+            .about_heading {
+                font-size: 50px;
+                margin-left: 0;
+                color: #D6383D;
+            }
+            
+        }
+    }
+   .services__section {
+    .services__body  {
+        h1 {
+            font-size: 2em;
+        }
+        .service_section {
+            width: 100%;
+            .service_body {
+                background-color: #D9D9D9;
+            }
+        }
+    }
+   }
+   .contact__section {
+        min-height: 100vh;
+        position: relative;
+        padding: 8em 0;
+        background-image: none;
+       .contact_section__heading {
+        position: absolute;
+        top: 10px;
+        margin-left: 0;
+
+        .one {
+            width: 40px;
+            
+        }
+        .two {
+            width: 20px;
+            margin: 0 4px;
+        }
+        
+       }
+    .contact_section__body {
+        flex-direction: column;
+        min-height: 100vh;
+
+         .fa-paper-plane {
+            font-size: 3em;
+         }
+        .contact_section__bodyLeft {
+            .contact_section__bodyLeft_heading {
+                font-size: 20px;
+            }
+        }
+         .contact_section__bodyRight {
+                  min-height: 100vh;
+            .contact_section__bodyRight_contactForm {
+                width: 100%;
+                height: 90%;
+                border-radius: 20px;
+                margin-top: 2em;
+                h1 {
+                    font-size: 2em;
+                }
+                form {
+                    width: 100%;
+                    padding: 0;
+                    gap: 1;
+                    input, textarea, button {
+                        width: 90%
+                    }
+                    button {
+                        padding-bottom: 20px;
+                    }
+
+                }
+            }
+         }
+        
+    }
+   }
+}
+
+
+

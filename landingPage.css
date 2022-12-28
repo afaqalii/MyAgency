@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  height: 100vh;
+  background-image: url("images/VectorhomePage.png");
+  background-color: #F5F6FF;
+}
+header .menu__items > li > a {
+  font-size: 20px;
+  padding: 0 2em;
+  color: #000000;
+  font-weight: 400;
+}
+header nav {
+  background-color: #F5F6FF;
+}
+header nav nav > h1 {
+  margin-left: -20px;
+}
+header nav .nav__btn > button {
+  background-color: #D6383D;
+  color: white;
+  font-weight: 900;
+  padding: 0.5em 1em;
+  box-shadow: 0px 2.99332px 4.48998px rgba(255, 255, 255, 0.35);
+  border-radius: 30.6816px;
+}
+header nav .menuBar {
+  display: none;
+}
+header .hero_content {
+  margin-top: -5em;
+}
+header .hero_content > h1 > span {
+  color: #D6383D;
+}
+header .hero_content > button {
+  width: 179.08px;
+  background: #5700B6;
+  color: white;
+  font-weight: 900;
+  box-shadow: 0px 2.96px 4.44px rgba(0, 0, 0, 0.35);
+  border-radius: 30.34px;
+  height: 42.92px;
+}
+header .header_image {
+  margin-top: -5em;
+}
+
+.about__section {
+  display: flex;
+  background-color: #F5F6FF;
+  position: relative;
+}
+.about__section .about_section_vectors {
+  position: relative;
+  width: 100%;
+}
+.about__section .about_section_vectors img:nth-child(1) {
+  position: absolute;
+  width: 112.64px;
+  height: 112.64px;
+  left: 10%;
+  z-index: 1;
+}
+.about__section .about_section_vectors img:nth-child(2) {
+  position: absolute;
+  width: 500px;
+  top: 12%;
+}
+.about__section .about_section_vectors img:nth-child(3) {
+  position: absolute;
+  top: 55%;
+  z-index: 1;
+}
+.about__section .about_section_vectors img:nth-child(4) {
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+.about__section .about_section_content {
+  position: absolute;
+  left: 20%;
+}
+.about__section .about_section_content .about_heading {
+  color: #2C2D36;
+  margin-left: -1em;
+}
+.about__section .about_section_content .about_para {
+  z-index: 2;
+}
+
+.services__section {
+  min-height: 100vh;
+  background: url(images/Left\ illustration.png), url(images/AI\ illustration\ peoplelast.png) bottom right, #D9D9D9;
+  background-repeat: no-repeat;
+}
+.services__section .services__body h1 {
+  color: #5700B6;
+}
+.services__section .services__body .service_section {
+  width: 744px;
+  margin-bottom: 2em;
+}
+.services__section .services__body .service_section .service_section__head {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px 25px 30px 25px;
+  background: linear-gradient(180deg, rgba(245, 246, 255, 0.7) 0%, rgba(248, 248, 248, 0) 100%);
+  -webkit-backdrop-filter: blur(10.5px);
+          backdrop-filter: blur(10.5px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 20px;
+}
+.services__section .services__body .service_section .service_section__head h3 {
+  font-size: 21px;
+  margin-left: 30px;
+  font-weight: bold;
+  flex: 2;
+}
+.services__section .services__body .service_section .service_section__head span {
+  float: right;
+}
+.services__section .services__body .service_section .service_body {
+  padding: 1em;
+  display: none;
+}
+
+.contact__section {
+  background: url("images/Last Graphic.png") no-repeat bottom left, url("images/VectorcontactDm.png") right center no-repeat, #F5F5F5;
+}
+.contact__section .contact_section__heading {
+  margin-left: 2em;
+}
+.contact__section .contact_section__heading .one {
+  width: 71px;
+  height: 3px;
+  background-color: #D6383D;
+}
+.contact__section .contact_section__heading .two {
+  width: 44px;
+  height: 3px;
+  background-color: #D6383D;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.contact__section .contact_section__heading p {
+  color: #5700B6;
+}
+.contact__section .contact_section__body {
+  height: 100vh;
+}
+.contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm {
+  background-color: #ffffff;
+  width: 555px;
+  height: 709px;
+  border-radius: 76px;
+  margin-top: -1em;
+}
+.contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm .contact-form-heading {
+  padding-top: 40px;
+}
+.contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form {
+  margin-top: -1.6em;
+}
+.contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form input {
+  height: 76px;
+}
+.contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form textarea {
+  height: 140px;
+}
+.contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form button {
+  background: linear-gradient(91.61deg, #9548E9 1.29%, #5700B6 98.03%);
+  width: 444px;
+  border-radius: 18px;
+  color: white;
+}
+.contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form input, .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form textarea {
+  border-radius: 18px;
+  background-color: #f3f3f3;
+  width: 444px;
+  padding: 10px;
+}
+
+.fa-paper-plane {
+  font-size: 5em;
+}
+
+.active {
+  transition: 0.3s ease-in;
+}
+
+footer {
+  background-color: #141414;
+}
+
+@media (max-width: 425px) {
+  header nav .menu__items {
+    display: none;
+  }
+  header nav .nav__btn {
+    display: none;
+  }
+  header nav .menuBar {
+    display: block;
+  }
+  header nav .menuBar .bar {
+    width: 30px;
+    height: 3px;
+    border-radius: 2px;
+    margin-top: 4px;
+    background-color: #000000;
+  }
+  header .hero .hero_content h1 {
+    font-size: 3em;
+    margin-top: 2em;
+    width: 100%;
+    padding: 0 10px;
+  }
+  header .header_image {
+    display: none;
+  }
+  .about__section {
+    padding: 0;
+  }
+  .about__section .about_section_vectors {
+    display: none;
+  }
+  .about__section .about_section_vectors img {
+    width: 100px;
+  }
+  .about__section .about_section_content {
+    width: 100%;
+    left: 5%;
+  }
+  .about__section .about_section_content p {
+    width: 90%;
+    margin-top: 10px;
+    padding: 0;
+  }
+  .about__section .about_section_content .about_heading {
+    font-size: 50px;
+    margin-left: 0;
+    color: #D6383D;
+  }
+  .services__section .services__body h1 {
+    font-size: 2em;
+  }
+  .services__section .services__body .service_section {
+    width: 100%;
+  }
+  .services__section .services__body .service_section .service_body {
+    background-color: #D9D9D9;
+  }
+  .contact__section {
+    min-height: 100vh;
+    position: relative;
+    padding: 8em 0;
+    background-image: none;
+  }
+  .contact__section .contact_section__heading {
+    position: absolute;
+    top: 10px;
+    margin-left: 0;
+  }
+  .contact__section .contact_section__heading .one {
+    width: 40px;
+  }
+  .contact__section .contact_section__heading .two {
+    width: 20px;
+    margin: 0 4px;
+  }
+  .contact__section .contact_section__body {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .contact__section .contact_section__body .fa-paper-plane {
+    font-size: 3em;
+  }
+  .contact__section .contact_section__body .contact_section__bodyLeft .contact_section__bodyLeft_heading {
+    font-size: 20px;
+  }
+  .contact__section .contact_section__body .contact_section__bodyRight {
+    min-height: 100vh;
+  }
+  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm {
+    width: 100%;
+    height: 90%;
+    border-radius: 20px;
+    margin-top: 2em;
+  }
+  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm h1 {
+    font-size: 2em;
+  }
+  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form {
+    width: 100%;
+    padding: 0;
+    gap: 1;
+  }
+  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form input, .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form textarea, .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form button {
+    width: 90%;
+  }
+  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form button {
+    padding-bottom: 20px;
+  }
+}/*# sourceMappingURL=landingPage.css.map */
