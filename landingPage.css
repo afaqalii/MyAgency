@@ -160,21 +160,27 @@ header .header_image {
 .contact__section .contact_section__body {
   height: 100vh;
 }
+.contact__section .contact_section__body .contact_section__bodyRight {
+  padding: 0 2em;
+}
 .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm {
   background-color: #ffffff;
-  width: 555px;
-  height: 709px;
-  border-radius: 76px;
+  width: 100%;
+  height: 90%;
+  border-radius: 40px;
   margin-top: -1em;
 }
 .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm .contact-form-heading {
   padding-top: 40px;
 }
 .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form {
+  width: 100%;
+  padding: 2em;
   margin-top: -1.6em;
 }
 .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form input {
-  height: 76px;
+  width: 90%;
+  height: 70px;
 }
 .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form textarea {
   height: 140px;
@@ -204,9 +210,30 @@ footer {
   background-color: #141414;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 650px) {
+  header nav h1 {
+    font-size: 30px;
+  }
   header nav .menu__items {
-    display: none;
+    position: absolute;
+    top: 0px;
+    right: 100%;
+  }
+  header nav .menu__items li {
+    padding: 10px 0;
+  }
+  header nav .menu__items li a {
+    color: white;
+  }
+  header nav .menu__itemsActive {
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    padding: 1em 0;
+    background-color: #5700B6;
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.3s ease-in;
   }
   header nav .nav__btn {
     display: none;
@@ -217,9 +244,28 @@ footer {
   header nav .menuBar .bar {
     width: 30px;
     height: 3px;
-    border-radius: 2px;
+    border-radius: 1px;
     margin-top: 4px;
     background-color: #000000;
+    border: none;
+  }
+  header nav .menuBarActive {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+  }
+  header nav .menuBarActive .bar.activated {
+    background-color: white;
+    transition: 0.3s ease-out;
+  }
+  header nav .menuBarActive .bar.activated:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  header nav .menuBarActive .bar.activated:nth-child(2) {
+    display: none;
+  }
+  header nav .menuBarActive .bar.activated:nth-child(3) {
+    transform: translateY(2px) rotate(-45deg);
   }
   header .hero .hero_content h1 {
     font-size: 3em;
@@ -231,7 +277,8 @@ footer {
     display: none;
   }
   .about__section {
-    padding: 0;
+    padding: 1em 0;
+    min-height: 50vh;
   }
   .about__section .about_section_vectors {
     display: none;
@@ -312,5 +359,56 @@ footer {
   }
   .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form button {
     padding-bottom: 20px;
+  }
+  footer {
+    gap: 50px;
+  }
+}
+@media (max-width: 768px) {
+  header nav .menu__items, header nav .nav__btn {
+    display: none;
+  }
+  header nav .menuBar {
+    display: block;
+  }
+  .services__section {
+    background: url("images/Left illustration.png"), none;
+  }
+  .services__section .services__body {
+    width: 100%;
+  }
+  .services__section .services__body .service_section {
+    width: 90%;
+    margin: 20px auto;
+  }
+}
+@media (max-width: 970px) {
+  header nav .menu__items li a {
+    padding: 0 10px;
+  }
+  header nav .menuBar {
+    display: block;
+  }
+  .about__section .about_section_content {
+    margin-left: 4em;
+  }
+  .about__section .about_section_content h1 {
+    margin-left: 24px;
+  }
+  .contact__section .contact_section__body .contact_section__bodyRight {
+    padding: 0;
+    width: 80%;
+  }
+  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form {
+    padding: 0;
+  }
+  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form input, .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form textarea, .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form button {
+    width: 90%;
+  }
+}
+@media (max-width: 1300px) {
+  .services__section .services__body .service_body {
+    background-color: #D9D9D9;
+    border-radius: 5px;
   }
 }/*# sourceMappingURL=landingPage.css.map */

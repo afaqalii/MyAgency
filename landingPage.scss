@@ -184,19 +184,23 @@ nav {
         //      }
         // }
         .contact_section__bodyRight {
+            padding: 0 2em;
             .contact_section__bodyRight_contactForm {
                 background-color: #ffffff;
-                width: 555px;
-                height: 709px;
-                border-radius: 76px;
+                width: 100%;
+                height: 90%;
+                border-radius: 40px;
                 margin-top: -1em;
                .contact-form-heading {
                 padding-top: 40px;
                }
                 form {
+                    width: 100%;
+                    padding: 2em;
                     margin-top: -1.6em;
                    input {
-                    height: 76px;
+                    width: 90%;
+                    height: 70px;
                    }
                    textarea {
                     height: 140px;
@@ -234,26 +238,69 @@ footer {
 
 // ++++++++++++ MEDIA QUERIES FOR MOBILE  STARTS HERE ++++++++++++++
 
-@media (max-width:425px) {
+@media (max-width:650px) {
     header {
         nav {
-            
-            .menu__items {
-                display: none;
+            h1 {
+                font-size: 30px;
             }
+            .menu__items {
+                position: absolute;
+                top: 0px;
+                right: 100%;
+                
+                li   {
+                padding: 10px 0;
+                 a {
+                    color: white;
+                 }
+                }
+            }
+            .menu__itemsActive {
+                right: 0;
+                flex-direction: column;
+                width: 100%;
+                padding: 1em 0;
+                background-color: #5700B6;
+                text-align: center;
+                border-radius: 10px;
+                transition: .3s ease-in ;
+            }
+
             .nav__btn {
                 display: none;
             }
             .menuBar {
             display: block;
+            
             .bar {
                 width: 30px;
                 height: 3px;
-                border-radius: 2px;
+                border-radius: 1px;
                 margin-top: 4px;
                 background-color: #000000;
+                border: none;
             }
             
+         }
+         .menuBarActive {
+            position: absolute;
+            top: 10px;
+            right: 16px;
+                        
+            .bar.activated {
+                background-color: white;
+                transition: .3s ease-out;
+            }
+            .bar.activated:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            .bar.activated:nth-child(2) {
+                display: none;
+            }
+            .bar.activated:nth-child(3) {
+                transform: translateY(2px) rotate(-45deg);
+            }
          }
         }
        .hero {
@@ -271,7 +318,8 @@ footer {
     }
     }
     .about__section {
-        padding: 0;
+        padding: 1em 0;
+        min-height: 50vh;
         .about_section_vectors  {
             display: none;
             img {
@@ -366,7 +414,79 @@ footer {
         
     }
    }
+   footer {
+    gap: 50px;
+   }
 }
 
+// ++++++++++++ MEDIA QUERIES FOR TABLETS  STARTS HERE ++++++++++++++
 
+@media (max-width:768px) {
+    header {
+        nav {
+            .menu__items, .nav__btn { display: none;}
+            
+            .menuBar { display: block;}
+        }
+    }
+    .services__section {
+        background: url("images/Left\ illustration.png"), none;
+        .services__body {
+            width: 100%;
+             .service_section {
+                width: 90%;
+                margin: 20px auto;
+             }
+        }
+    }
+}
 
+@media (max-width:970px) {
+    header {
+        nav {
+            .menu__items {
+                li {
+                    a {
+                        padding: 0 10px;
+                    }
+                }
+            }
+            .menuBar { display: block; }
+        }
+    }
+    .about__section {
+        .about_section_content {
+            margin-left: 4em;
+              h1 {
+                margin-left: 24px;
+              }
+        }
+    }
+    .contact__section {
+        .contact_section__body {
+            .contact_section__bodyRight {
+                padding: 0;
+                width: 80%;
+
+                .contact_section__bodyRight_contactForm {
+                      form {
+                        padding: 0;
+                         input, textarea, button {
+                            width: 90%;
+                         }
+                      }
+                }
+            }
+        }
+    }
+}
+@media (max-width:1300px) {
+      .services__section {
+        .services__body {
+            .service_body {
+                background-color: #D9D9D9;
+                border-radius: 5px;
+            }
+        }
+      }
+}
