@@ -243,6 +243,7 @@ footer {
         nav {
             h1 {
                 font-size: 30px;
+
             }
             .menu__items {
                 position: absolute;
@@ -261,7 +262,7 @@ footer {
                 flex-direction: column;
                 width: 100%;
                 padding: 1em 0;
-                background-color: #5700B6;
+                background-color: #000000;
                 text-align: center;
                 border-radius: 10px;
                 transition: .3s ease-in ;
@@ -289,7 +290,7 @@ footer {
             right: 16px;
                         
             .bar.activated {
-                background-color: white;
+                background-color: rgb(255, 0, 0);
                 transition: .3s ease-out;
             }
             .bar.activated:nth-child(1) {
@@ -322,21 +323,19 @@ footer {
         min-height: 50vh;
         .about_section_vectors  {
             display: none;
-            img {
-                width: 100px;
-            }
+
         }
         .about_section_content {
-            width: 100%;
-            left: 5%;
+            text-align: center;
+            position: static;
+            width: 90%;
             p {
                 width: 90%;
-                margin-top:10px;
-                padding: 0;
+                margin-top:20px;
+                font-size: 26px;
             }
             .about_heading {
                 font-size: 50px;
-                margin-left: 0;
                 color: #D6383D;
             }
             
@@ -379,6 +378,7 @@ footer {
         flex-direction: column;
         min-height: 100vh;
 
+
          .fa-paper-plane {
             font-size: 3em;
          }
@@ -388,10 +388,9 @@ footer {
             }
         }
          .contact_section__bodyRight {
-                  min-height: 100vh;
-            .contact_section__bodyRight_contactForm {
                 width: 100%;
-                height: 90%;
+                display: flex;
+                .contact_section__bodyRight_contactForm {
                 border-radius: 20px;
                 margin-top: 2em;
                 h1 {
@@ -399,6 +398,7 @@ footer {
                 }
                 form {
                     width: 100%;
+                    margin-top: 0;
                     padding: 0;
                     gap: 1;
                     input, textarea, button {
