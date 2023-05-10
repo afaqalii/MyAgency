@@ -12,10 +12,13 @@
 </head>
 <body>
     <!-- ++++++++++++ HEADER SECTION STARTS HERE +++++++++ -->
+    <!-- padding for navbar padding: 0px 50px; -->
+    <!-- logo fontsize is 32px  -->
+    <!-- menu Items font size 25px color black -->
     <header id="home">
-    <nav class="flex py-7 p-3   justify-around items-center ">
-   <h1 class="text-3xl font-black">Apolarity Studios.</h1>
-    <div class="menu__items  flex justify-between">
+    <nav class="px-3 py-5 sm:px-12 sm:py-8 ">
+   <h1 class="text-2xl sm:text-3xl font-black">Apolarity Studios.</h1>
+    <div class="menu__items hidden flex justify-between  lg:flex">
         <li class="menu_item list-none">
            <a href="#home" >Home</a>
          </li>
@@ -25,27 +28,26 @@
           <li class="menu_item list-none">
             <a href="#about">About</a>
           </li>
-          <li class="menu_item list-none">
+          <li class="menu_item   list-none">
             <a href="#projects">Our Projects</a>
           </li>
-           
     </div>
-    <div class="nav__btn">
+    <div class="nav__btn hidden md:block">
         <button><a href="#contact">Order Now</a></button>
     </div>
-    <div class="menuBar">
+    <div class="menuBar lg:hidden">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
     </div>
-</nav>
+    </nav>
 
-<div class="hero grid place-items-center  h-3/4">
-    <div class="hero_content w-full grid place-items-center"> 
-    <h1 class="text-6xl w-1/2 font-black text-center"><span>Apolarity Studios</span> Designing the Future of your Business</h1>
-    <button class="mt-10">GET STARTED</button>
+    <div class="hero">
+        <div class="hero_content"> 
+        <h1 class="font-black text-center"><span>Apolarity Studios</span> Designing the Future of your Business</h1>
+        <button class="mt-10">GET STARTED</button>
+        </div>
     </div>
-</div>
 <figure class="header_image">
     <img src="images/Vector.png " alt="verter Image">
 </figure>
@@ -53,21 +55,21 @@
 
     <!-- ++++++++++++ ABOUT SECTION STARTS HERE +++++++++ -->
 
-<div id="about" class="about__section py-40 h-screen">
-    <div class="about_section_vectors my-5"> 
+<div id="about" class="about__section lg:py-40 h-screen">
+    <div class="about_section_vectors lg:my-5"> 
             <img src="images/Ellipse 42about1.png" alt="">
             <img src="images/Vectorabout2.png" alt="">
             <img src="images/Vectorabout3.png" alt="">
             <img src="images/Vectorabout4.png" alt="">
     </div>
-    <div class="about_section_content my-5 w-1/2">
-        <h1 class="about_heading font-black text-6xl">ABOUT US</h1>
-        <p class="about_para mt-5 text-3xl">Apolarity Studio is a Web design and development agency that helps businesses reach their goals by providing <span>Seo optimized</span> <span>user-friendly</span> <span>fast loading speed</span> websites. We offer website development for all niches large-scale , small-scale or even personal portfolio. </p>    
+    <div class="about_section_content my-5 lg:w-1/2">
+        <h1 class="about_heading font-black text-center lg:text-left text-4xl lg:text-6xl">ABOUT US</h1>
+        <p class="about_para mt-5 text-2xl lg:text-3xl text-center">Apolarity Studio is a Web design and development agency that helps businesses reach their goals by providing <span>Seo optimized</span> <span>user-friendly</span> <span>fast loading speed</span> websites. We offer website development for all niches large-scale , small-scale or even personal portfolio. </p>    
     </div>
 </div>
     <!-- ++++++++++++ SERVICES SECTION STARTS HERE +++++++++ -->
 
-    <div id="services" class="services__section   grid place-items-center">
+    <div id="services" class="services__section py-5">
         <div class="services__body">
             <h1 class="text-5xl tracking-wide font-bold text-center py-10">SERVICES WE PROVIDE</h1>
             <div class="service_section">
@@ -129,7 +131,7 @@
             <div class="two"></div>
             <p>LET'S TALK.</p>
         </div>
-        <div class="contact_section__body flex justify-around mt-10 p-5">
+        <div class="contact_section__body">
             <div class="contact_section__bodyLeft">
                <div class="contact_section__bodyLeft_heading">
                 <h1 class="text-4xl font-semibold">Want to enhance your business?</h1>
@@ -145,7 +147,7 @@
               </div>
             <div class="contact_section__bodyRight">
                 <div class="contact_section__bodyRight_contactForm text-center">
-                    <h1 class="contact-form-heading text-4xl font-bold">GET YOUR WEBSITE NOW</h1>
+                    <h1 class="contact-form-heading  font-bold">GET YOUR WEBSITE NOW</h1>
                     <form class="flex flex-col items-center justify-center gap-5 ">
                         <input type="text" placeholder="Name">
                         <input type="text" placeholder="Email address">

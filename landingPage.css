@@ -9,9 +9,13 @@ html {
 }
 
 header {
+  position: relative;
+  display: grid;
+  place-content: center;
   height: 100vh;
   background-image: url("images/VectorhomePage.png");
   background-color: #F5F6FF;
+  border: 1px solid black;
 }
 header .menu__items > li > a {
   font-size: 20px;
@@ -19,11 +23,23 @@ header .menu__items > li > a {
   color: #000000;
   font-weight: 400;
 }
-header nav {
-  background-color: #F5F6FF;
+@media (min-width: 1024px) {
+  header .menu__items > li > a {
+    padding: 0 1.5em;
+  }
 }
-header nav nav > h1 {
-  margin-left: -20px;
+@media (min-width: 1280px) {
+  header .menu__items > li > a {
+    padding: 0 2em;
+  }
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  background-color: #F5F6FF;
 }
 header nav .nav__btn > button {
   background-color: #D6383D;
@@ -32,17 +48,45 @@ header nav .nav__btn > button {
   padding: 0.5em 1em;
   box-shadow: 0px 2.99332px 4.48998px rgba(255, 255, 255, 0.35);
   border-radius: 30.6816px;
-}
-header nav .menuBar {
   display: none;
 }
-header .hero_content {
-  margin-top: -5em;
+@media (min-width: 1024px) {
+  header nav .nav__btn > button {
+    display: block;
+  }
 }
-header .hero_content > h1 > span {
+header nav .menuBar .bar {
+  width: 30px;
+  height: 5px;
+  background-color: black;
+  border-radius: 10px;
+}
+header nav .menuBar .bar:nth-child(2) {
+  margin: 3px 0;
+}
+header .hero {
+  display: grid;
+  place-content: center;
+}
+header .hero .hero_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -2em;
+}
+header .hero .hero_content h1 {
+  font-size: 40px;
+}
+@media (min-width: 1024px) {
+  header .hero .hero_content h1 {
+    width: 90%;
+    font-size: 80px;
+  }
+}
+header .hero .hero_content span {
   color: #D6383D;
 }
-header .hero_content > button {
+header .hero .hero_content button {
   width: 179.08px;
   background: #5700B6;
   color: white;
@@ -52,16 +96,24 @@ header .hero_content > button {
   height: 42.92px;
 }
 header .header_image {
-  margin-top: -5em;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  z-index: 1;
+}
+header .header_image img {
+  width: 150px;
 }
 
 .about__section {
   display: flex;
-  background-color: #F5F6FF;
   position: relative;
+  justify-content: center;
+  background-color: #F5F6FF;
 }
 .about__section .about_section_vectors {
-  position: relative;
+  position: absolute;
+  display: none;
   width: 100%;
 }
 .about__section .about_section_vectors img:nth-child(1) {
@@ -87,19 +139,18 @@ header .header_image {
   top: 50%;
 }
 .about__section .about_section_content {
-  position: absolute;
-  left: 20%;
+  margin-left: -10%;
 }
 .about__section .about_section_content .about_heading {
   color: #2C2D36;
-  margin-left: -1em;
 }
 .about__section .about_section_content .about_para {
   z-index: 2;
 }
 
 .services__section {
-  min-height: 100vh;
+  display: grid;
+  place-items: center;
   background: url(images/Left\ illustration.png), url(images/AI\ illustration\ peoplelast.png) bottom right, #D9D9D9;
   background-repeat: no-repeat;
 }
@@ -107,7 +158,6 @@ header .header_image {
   color: #5700B6;
 }
 .services__section .services__body .service_section {
-  width: 744px;
   margin-bottom: 2em;
 }
 .services__section .services__body .service_section .service_section__head {
@@ -161,7 +211,7 @@ header .header_image {
   height: 100vh;
 }
 .contact__section .contact_section__body .contact_section__bodyRight {
-  padding: 0 2em;
+  border: 1px solid black;
 }
 .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm {
   background-color: #ffffff;
@@ -180,21 +230,18 @@ header .header_image {
 }
 .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form input {
   width: 90%;
-  height: 70px;
 }
 .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form textarea {
   height: 140px;
 }
 .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form button {
   background: linear-gradient(91.61deg, #9548E9 1.29%, #5700B6 98.03%);
-  width: 444px;
   border-radius: 18px;
   color: white;
 }
 .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form input, .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form textarea {
   border-radius: 18px;
   background-color: #f3f3f3;
-  width: 444px;
   padding: 10px;
 }
 
@@ -208,204 +255,4 @@ header .header_image {
 
 footer {
   background-color: #141414;
-}
-
-@media (max-width: 650px) {
-  header nav h1 {
-    font-size: 30px;
-  }
-  header nav .menu__items {
-    position: absolute;
-    top: 0px;
-    right: 100%;
-  }
-  header nav .menu__items li {
-    padding: 10px 0;
-  }
-  header nav .menu__items li a {
-    color: white;
-  }
-  header nav .menu__itemsActive {
-    right: 0;
-    flex-direction: column;
-    width: 100%;
-    padding: 1em 0;
-    background-color: #000000;
-    text-align: center;
-    border-radius: 10px;
-    transition: 0.3s ease-in;
-  }
-  header nav .nav__btn {
-    display: none;
-  }
-  header nav .menuBar {
-    display: block;
-  }
-  header nav .menuBar .bar {
-    width: 30px;
-    height: 3px;
-    border-radius: 1px;
-    margin-top: 4px;
-    background-color: #000000;
-    border: none;
-  }
-  header nav .menuBarActive {
-    position: absolute;
-    top: 10px;
-    right: 16px;
-  }
-  header nav .menuBarActive .bar.activated {
-    background-color: rgb(255, 0, 0);
-    transition: 0.3s ease-out;
-  }
-  header nav .menuBarActive .bar.activated:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-  }
-  header nav .menuBarActive .bar.activated:nth-child(2) {
-    display: none;
-  }
-  header nav .menuBarActive .bar.activated:nth-child(3) {
-    transform: translateY(2px) rotate(-45deg);
-  }
-  header .hero .hero_content h1 {
-    font-size: 3em;
-    margin-top: 2em;
-    width: 100%;
-    padding: 0 10px;
-  }
-  header .header_image {
-    display: none;
-  }
-  .about__section {
-    padding: 1em 0;
-    min-height: 50vh;
-  }
-  .about__section .about_section_vectors {
-    display: none;
-  }
-  .about__section .about_section_content {
-    text-align: center;
-    position: static;
-    width: 90%;
-  }
-  .about__section .about_section_content p {
-    width: 90%;
-    margin-top: 20px;
-    font-size: 26px;
-  }
-  .about__section .about_section_content .about_heading {
-    font-size: 50px;
-    color: #D6383D;
-  }
-  .services__section .services__body h1 {
-    font-size: 2em;
-  }
-  .services__section .services__body .service_section {
-    width: 100%;
-  }
-  .services__section .services__body .service_section .service_body {
-    background-color: #D9D9D9;
-  }
-  .contact__section {
-    min-height: 100vh;
-    position: relative;
-    padding: 8em 0;
-    background-image: none;
-  }
-  .contact__section .contact_section__heading {
-    position: absolute;
-    top: 10px;
-    margin-left: 0;
-  }
-  .contact__section .contact_section__heading .one {
-    width: 40px;
-  }
-  .contact__section .contact_section__heading .two {
-    width: 20px;
-    margin: 0 4px;
-  }
-  .contact__section .contact_section__body {
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  .contact__section .contact_section__body .fa-paper-plane {
-    font-size: 3em;
-  }
-  .contact__section .contact_section__body .contact_section__bodyLeft .contact_section__bodyLeft_heading {
-    font-size: 20px;
-  }
-  .contact__section .contact_section__body .contact_section__bodyRight {
-    width: 100%;
-    display: flex;
-  }
-  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm {
-    border-radius: 20px;
-    margin-top: 2em;
-  }
-  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm h1 {
-    font-size: 2em;
-  }
-  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form {
-    width: 100%;
-    margin-top: 0;
-    padding: 0;
-    gap: 1;
-  }
-  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form input, .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form textarea, .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form button {
-    width: 90%;
-  }
-  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form button {
-    padding-bottom: 20px;
-  }
-  footer {
-    gap: 50px;
-  }
-}
-@media (max-width: 768px) {
-  header nav .menu__items, header nav .nav__btn {
-    display: none;
-  }
-  header nav .menuBar {
-    display: block;
-  }
-  .services__section {
-    background: url("images/Left illustration.png"), none;
-  }
-  .services__section .services__body {
-    width: 100%;
-  }
-  .services__section .services__body .service_section {
-    width: 90%;
-    margin: 20px auto;
-  }
-}
-@media (max-width: 970px) {
-  header nav .menu__items li a {
-    padding: 0 10px;
-  }
-  header nav .menuBar {
-    display: block;
-  }
-  .about__section .about_section_content {
-    margin-left: 4em;
-  }
-  .about__section .about_section_content h1 {
-    margin-left: 24px;
-  }
-  .contact__section .contact_section__body .contact_section__bodyRight {
-    padding: 0;
-    width: 80%;
-  }
-  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form {
-    padding: 0;
-  }
-  .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form input, .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form textarea, .contact__section .contact_section__body .contact_section__bodyRight .contact_section__bodyRight_contactForm form button {
-    width: 90%;
-  }
-}
-@media (max-width: 1300px) {
-  .services__section .services__body .service_body {
-    background-color: #D9D9D9;
-    border-radius: 5px;
-  }
 }/*# sourceMappingURL=landingPage.css.map */
