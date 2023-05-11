@@ -279,7 +279,7 @@ header .header_image img {
   margin-bottom: 2em;
   width: 100%;
 }
-@media (min-width: 648px) {
+@media (min-width: 768px) {
   .services__section .services__body .service_section {
     width: 700px;
   }

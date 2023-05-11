@@ -294,7 +294,7 @@ nav {
     .service_section {
          margin-bottom: 2em;
          width: 100%;
-         @include sm-screen() {
+         @include md-screen() {
             width: 700px;
          }
         .service_section__head  {
