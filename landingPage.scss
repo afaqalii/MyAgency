@@ -45,6 +45,11 @@ $BackgroundColor:#F5F6FF;
 html {
     scroll-behavior: smooth;
 }
+.fluid  {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
 
 // ++++++++++++ HEADER PAGE STARTS HERE ++++++++++++++
 header {
@@ -54,8 +59,6 @@ header {
     height: 100vh;
     background-image: url("images/VectorhomePage.png");
     background-color: $BackgroundColor;
-    border: 1px solid black;
-
 .menu__items > li > a {
     font-size: 20px;
     padding:0 2em;
@@ -77,6 +80,7 @@ nav {
     position: fixed;
     width: 100%;
     background-color: $BackgroundColor;
+    z-index: 10;
 
     .nav__btn > button {
         background-color: #D6383D;
@@ -114,6 +118,9 @@ nav {
         flex-direction: column;
         align-items: center;   
         margin-top: -2em;
+        @include md-screen {
+            margin-top: 2em;
+        }
         h1 {
             font-size: 40px;
             @include lg-screen {
@@ -125,12 +132,18 @@ nav {
         color: #D6383D;
     }
      button {
-        width: 179.08px;
+        padding: 1em 3em;
         background: #5700B6;
         color: white;
         font-weight: $ExtraBold;
         box-shadow: 0px 2.96px 4.44px rgba(0, 0, 0, 0.35);
-        border-radius: 30.34px;height: 42.92px;
+        border-radius: 30.34px;
+        @include xlg-screen() {
+            padding: 1em 3em;
+            font-size: 30px;
+            border-radius: 50px;
+            margin-top: 3em;
+        }
     }
   }
  }
@@ -151,47 +164,72 @@ nav {
     display: flex;
     position: relative;
     justify-content: center;
-    background-color: $BackgroundColor;
     .about_section_vectors {
-            position: absolute;
             display: none;
-            width: 100%;
-         img:nth-child(1) {
-            position: absolute;
-            width: 112.64px;
-            height: 112.64px;
-            left: 10%;
-            z-index: 1;
-         }
-         img:nth-child(2) {
-            position: absolute;
-            width: 500px;
-            top: 12%;            
-         }
-         img:nth-child(3) {
-            position: absolute;
-            top: 55%;
-            z-index: 1;
-         }
-         img:nth-child(4) {
-            position: absolute;
+            width: 50%;
+            height: 100%;
             left: 0;
-            top: 50%;
+            @include lg-screen {
+                position: absolute;
+                display: block;
+            }
+         .one {
+            position: absolute;
+            top: 0;
+            left: 13%;
+            z-index: 3;
+            @include xlg-screen {
+                left: 25%;
+            }
+         }
+         .two {
+            position: absolute;
+            top: 10%;
+            z-index: -1;
+            img {
+                width: 500px;
+               }
+         }
+         .three {
+            position: absolute;
+            top: 30%;
+            height: 500px;
+            width: 400px;
 
          }
-        
+         .four {
+            position: absolute;
+            top: 30%;
+            img {
+                // width: 200px;
+                // height: 400px;
+               }
+         }
     }
     .about_section_content  {
-        margin-left: 0;
         @include lg-screen {
-            margin-left: -10%; 
+            width: 70%;
+        }
+        @include xlg-screen {
+            width: 60%;
+            margin-left: -6rem;            
         }     
+        @include xxlg-screen() {
+            margin-left: -8rem;
+        }
         .about_heading {
             color: #2C2D36;
-            // margin-left: -1em;
         }
         .about_para {
             z-index: 2;
+            text-align: center;
+            @include lg-screen {
+                text-align: left;
+                margin-left: 70px;
+            }
+            @include xxlg-screen() {
+                width: 50%;
+            }
         }
     } 
 }
@@ -234,6 +272,15 @@ nav {
         .service_body {
             padding: 1em;
             display: none;
+            background-color: gray;
+            @include xlg-screen {
+              background-color: transparent;
+            }
+            p {
+                @include xlg-screen {
+                    color: #000000;
+                }
+            }
         }
     }
     
@@ -242,78 +289,153 @@ nav {
 
 // ++++++++++++ CONTACT US PAGE STARTS HERE ++++++++++++++
 
-
-.contact__section {
-    background: url("images/Last\ Graphic.png") no-repeat bottom left, url("images/VectorcontactDm.png") right center no-repeat,  #F5F5F5;
-    
-    .contact_section__heading  {
-         margin-left: 2em;
-        .one {
-            width: 71px;
-            height: 3px;
-            background-color: #D6383D;
+.contact-section-wrapper {
+    position: relative;
+    background-color: $BackgroundColor;
+    .contact__section {
+       @include lg-screen {
+        padding: 7rem 0;
+       }
+        .contact_section__heading  {
+             display: flex;
+             align-items: center;
+            .one {
+                width: 71px;
+                height: 3px;
+                background-color: #D6383D;
+            }
+            .two {
+                width: 44px;
+                height: 3px;
+                background-color: #D6383D;
+                margin-left: 10px;
+                margin-right: 20px;
+                display: none;
+                @include sm-screen {
+                    display: block;
+                }
+            }
+             p {
+                color: #5700B6;
+                margin-left: 10px;
+                @include sm-screen {
+                    margin-left: 0px;
+                }
+             } 
+            
         }
-        .two {
-            width: 44px;
-            height: 3px;
-            background-color: #D6383D;
-            margin-left: 10px;
-            margin-right: 20px;
+        .vertor-bars {
+            bottom: 0;
+            left: 0;
+            img {
+                width: 400px;
+            }
         }
-         p {
-            color: #5700B6;
-         } 
-        
-    }
-    .contact_section__body { 
-        height: 100vh;
-        // .contact_section__bodyLeft {
-        //      .contact_section__bodyLeft_body {
-
-        //      }
-        // }
-        .contact_section__bodyRight {
-            border: 1px solid black;
-            // padding: 0 2em;
-            .contact_section__bodyRight_contactForm {
-                background-color: #ffffff;
-                width: 100%;
-                height: 90%;
-                border-radius: 40px;
-                margin-top: -1em;
-               .contact-form-heading {
-                padding-top: 40px;
-               }
-                form {
+        .vertor-contact {
+            right: 0;
+            img {
+                width: 150px;
+            }
+        }
+        .vertor-bars, .vertor-contact {
+            position: absolute;
+            display: none;
+            @include lg-screen() {
+              display: block;
+            }
+        }
+        .contact_section__body { 
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            gap: 40px;
+            @include lg-screen {
+                flex-direction: row;
+                gap: 20px;
+            }
+            @include xlg-screen() {
+                 padding: 40px 4rem;
+                 margin-top: 2em;
+                 gap: 0;
+            }
+            .contact_section__bodyLeft {
+                .contact_section__bodyLeft_heading {
+                    margin-left: 20px;
+                    @include xlg-screen() {
+                        width: 90%;
+                    }
+                    h1 {
+                        @include xlg-screen() {
+                            font-size: 50px;
+                            font-weight: bold;
+                            line-height: 3rem;
+                        }
+                    }
+                    p {
+                        margin-top: 10px;
+                    }
+                }
+            }
+            .contact_section__bodyRight {
+                @include xlg-screen() {
+                    margin-top: -6em;
+                }
+                .contact_section__bodyRight_contactForm {
+                    background-color: #ffffff;
                     width: 100%;
-                    padding: 2em;
-                    margin-top: -1.6em;
-                   input {
-                    width: 90%;
-                    // height: 70px;
+                    padding: 2em 0;
+                    @include lg-screen {
+                        border-radius: 40px;
+                    }
+                    @include xlg-screen() {
+                        width: 555px;
+                        padding: 3em 0;
+                    }
+                   .contact-form-heading {
+                     font-size: 30px;
+                     @include xlg-screen() {
+                        font-size: 50px;
+                     }
                    }
-                   textarea {
-                    height: 140px;
-                   }
-                   button {
-                    background: linear-gradient(91.61deg, #9548E9 1.29%, #5700B6 98.03%);
-                    // width: 444px;
-                    border-radius: 18px;
-                    color: white;
-                    // margin-top: em;
-                   }
-                   input, textarea {
-                    border-radius: 18px;
-                    background-color: #f3f3f3;
-                    // width: 44px;
-                    padding: 10px;
-                   }
+                    form {
+                        width: 100%;
+                        @include sm-screen {
+                            width: 70%;
+                            margin: 0 auto;
+                        }
+                        @include lg-screen {
+                            width: 100%;
+                        }
+                       input {
+                        width: 90%;
+                       }
+                       textarea {
+                        width: 90%;
+                       }
+                       button {
+                        background: linear-gradient(91.61deg, #9548E9 1.29%, #5700B6 98.03%);
+                        border-radius: 5px;
+                        color: white;
+                        width: 90%;
+                        font-weight: bold;
+                       }
+                       input, textarea {
+                        border-radius: 5px;
+                        background-color: #f3f3f3;
+                        padding: 10px;
+                        outline: none;
+                        @include xlg-screen() {
+                            padding: 25px;
+                        }
+                       }
+                    }
                 }
             }
         }
+        
     }
-    
 }
+
 .fa-paper-plane {
     font-size: 5em;
 }
@@ -322,6 +444,16 @@ nav {
 }
 footer {
     background-color: $ParaFontColor;
+    p {
+
+    }
+    .footer__navlinks {
+        margin-bottom: 10px;
+        a {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
 }
 
 

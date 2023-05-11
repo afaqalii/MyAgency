@@ -8,41 +8,43 @@
     <link rel="stylesheet" href="landingPage.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,700,1,200" />  <title>Apolarity Studios</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,700,1,200" /> 
+     <title>Apolarity Studios</title>
 </head>
 <body>
     <!-- ++++++++++++ HEADER SECTION STARTS HERE +++++++++ -->
     <!-- padding for navbar padding: 0px 50px; -->
     <!-- logo fontsize is 32px  -->
     <!-- menu Items font size 25px color black -->
-    <header id="home">
-    <nav class="px-3 py-5 sm:px-12 sm:py-8 ">
-   <h1 class="text-2xl sm:text-3xl font-black">Apolarity Studios.</h1>
-    <div class="menu__items hidden flex justify-between  lg:flex">
-        <li class="menu_item list-none">
-           <a href="#home" >Home</a>
-         </li>
-         <li class=" menu_item list-none">
-            <a href="#services">Services</a>
-          </li>
-          <li class="menu_item list-none">
-            <a href="#about">About</a>
-          </li>
-          <li class="menu_item   list-none">
-            <a href="#projects">Our Projects</a>
-          </li>
-    </div>
-    <div class="nav__btn hidden md:block">
-        <button><a href="#contact">Order Now</a></button>
-    </div>
-    <div class="menuBar lg:hidden">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
+<header id="home">
+  <nav class="px-3 py-5 sm:px-12 sm:py-8 ">
+     <div class="fluid flex justify-between items-center">
+        <h1 class="text-2xl sm:text-3xl font-black">Apolarity Studios.</h1>
+            <div class="menu__items hidden flex justify-between  lg:flex">
+                <li class="menu_item list-none">
+                <a href="#home" >Home</a>
+                </li>
+                <li class=" menu_item list-none">
+                    <a href="#services">Services</a>
+                </li>
+                <li class="menu_item list-none">
+                    <a href="#about">About</a>
+                </li>
+                <li class="menu_item   list-none">
+                    <a href="#projects">Our Projects</a>
+                </li>
+            </div>
+            <div class="nav__btn hidden md:block">
+                <button><a href="#contact">Order Now</a></button>
+            </div>
+            <div class="menuBar lg:hidden">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
     </nav>
-
-    <div class="hero">
+</div>
+    <div class="hero fluid">
         <div class="hero_content"> 
         <h1 class="font-black text-center"><span>Apolarity Studios</span> Designing the Future of your Business</h1>
         <button class="mt-10">GET STARTED</button>
@@ -55,16 +57,24 @@
 
     <!-- ++++++++++++ ABOUT SECTION STARTS HERE +++++++++ -->
 
-<div id="about" class="about__section lg:py-40 h-screen">
+<div id="about" class="about__section py-20 lg:py-40">
     <div class="about_section_vectors lg:my-5"> 
-            <img src="images/Ellipse 42about1.png" alt="">
-            <img src="images/Vectorabout2.png" alt="">
-            <img src="images/Vectorabout3.png" alt="">
-            <img src="images/Vectorabout4.png" alt="">
+            <div class="img one">
+                <img src="images/Ellipse 42about1.png" alt="">
+            </div>
+            <div class="img two">
+                <img src="images/Vectorabout2.png" alt="">
+            </div>
+            <div class="img three">
+                <img src="images/Vectorabout3.png" alt="">
+            </div>
+            <div class="img four">
+              <img src="images/Vectorabout4.png" alt="">
+            </div>
     </div>
-    <div class="about_section_content my-5 lg:w-1/2">
-        <h1 class="about_heading font-black text-center lg:text-left text-4xl lg:text-6xl">ABOUT US</h1>
-        <p class="about_para mt-5 text-2xl lg:text-3xl text-center">Apolarity Studio is a Web design and development agency that helps businesses reach their goals by providing <span>Seo optimized</span> <span>user-friendly</span> <span>fast loading speed</span> websites. We offer website development for all niches large-scale , small-scale or even personal portfolio. </p>    
+    <div class="about_section_content  my-5">
+        <h1 class="about_heading font-black text-center lg:text-left text-4xl lg:text-8xl">ABOUT US</h1>
+        <p class="about_para mt-5 text-2xl lg:text-3xl">Apolarity Studio is a Web design and development agency that helps businesses reach their goals by providing <span>Seo optimized</span> <span>user-friendly</span> <span>fast loading speed</span> websites. We offer website development for all niches large-scale , small-scale or even personal portfolio. </p>    
     </div>
 </div>
     <!-- ++++++++++++ SERVICES SECTION STARTS HERE +++++++++ -->
@@ -124,12 +134,18 @@
     </div>
 
     <!-- ++++++++++++ CONTACT US PAGE SECTION STARTS HERE +++++++++ -->
-
-     <div id="contact" class="contact__section py-10">
-        <div class="contact_section__heading text-3xl font-normal gap-3 flex items-center">
+     <div class="contact-section-wrapper">
+     <div id="contact" class="contact__section fluid pt-10">
+        <div class="contact_section__heading text-3xl font-normal">
             <div class="one"></div>
             <div class="two"></div>
             <p>LET'S TALK.</p>
+        </div>
+        <div class="vertor-bars">
+            <img src="images/Last Graphic.png" alt="">
+        </div>
+        <div class="vertor-contact">
+            <img src="images/VectorcontactDm.png" alt="">
         </div>
         <div class="contact_section__body">
             <div class="contact_section__bodyLeft">
@@ -147,7 +163,7 @@
               </div>
             <div class="contact_section__bodyRight">
                 <div class="contact_section__bodyRight_contactForm text-center">
-                    <h1 class="contact-form-heading  font-bold">GET YOUR WEBSITE NOW</h1>
+                    <h1 class="contact-form-heading p-5 font-bold">Place an Order Now!</h1>
                     <form class="flex flex-col items-center justify-center gap-5 ">
                         <input type="text" placeholder="Name">
                         <input type="text" placeholder="Email address">
@@ -159,12 +175,12 @@
             </div>
         </div>
      </div>
-
+</div>
 
     <!-- ++++++++++++ FOOTER SECTION STARTS HERE +++++++++ -->
 
-<footer class="p-5 flex justify-around items-center text-white" >
-    <p>@copyright 2022-25 All rights reserved</p>
+<footer class="p-5 flex flex-col-reverse justify-around items-center text-white" >
+    <p class="capitalize text-sm">copyright 2022-25 All rights reserved</p>
     <div class="footer__navlinks flex gap-5">
         <a href="#home">Home</a>
         <a href="#about">Work</a>
