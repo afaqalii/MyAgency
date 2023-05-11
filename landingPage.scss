@@ -59,20 +59,6 @@ header {
     height: 100vh;
     background-image: url("images/VectorhomePage.png");
     background-color: $BackgroundColor;
-.menu__items > li > a {
-    font-size: 20px;
-    padding:0 2em;
-    color: $MainFontColor;
-    font-weight: $MainFontWeight;
-
-    @include lg-screen {
-        padding: 0 1.5em;
-    }
-    @include xlg-screen {
-        padding: 0 2em;
-    }
-    
-}
 nav {
     display: flex;
     align-items: center;
@@ -81,19 +67,80 @@ nav {
     width: 100%;
     background-color: $BackgroundColor;
     z-index: 10;
+    .menu__items {
+        @include lg-screen() {
+            position: static;
+        }
+        position: absolute;
+        right: 100%;
+        top: 60px;
+        transition: .3s ease-in-out;
+        @include sm-screen() {
+            top: 70px;
+        }
+        li   {
+        padding: 15px;
+        @include sm-screen() {
+            padding-left: 50px;
+        }
+        @include  lg-screen() {
+            padding-left: 0;
+        }
+         a {
+            @include lg-screen() {
+                font-size: 20px;
+                padding:0 1.5em;
+                color: $MainFontColor;
+                font-weight: $MainFontWeight;
+            }
+            @include xlg-screen {
+                padding: 0 2em;
+            }
+            color: white;
+            position: relative;
 
-    .nav__btn > button {
-        background-color: #D6383D;
-        color: white;
-        font-weight: $ExtraBold;
-        padding: .5em 1em ;
-        box-shadow: 0px 2.99332px 4.48998px rgba(255, 255, 255, 0.35);
-        border-radius: 30.6816px;
-        display: none;
-     
-        @include lg-screen {
-            display: block;
-             
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-color: #D6383D;
+                top: 30px;
+                left: 0;
+
+                @include lg-screen() {
+                    width: 0%;
+                }
+            }
+            &::after:hover {
+                width: 100%;
+            }
+         }
+        }
+    }
+    .menu__itemsActive {
+        right: 0;
+        flex-direction: column;
+        width: 100%;
+        padding: 2em 0;
+        background-color: #000000;
+        text-align: left;
+    }
+    .nav__btn  {
+        padding: 0 1em;
+        button {
+            @include lg-screen {
+                display: block;    
+                padding: 1em 3em;
+            }
+            background-color: #D6383D;
+            color: white;
+            font-weight: $ExtraBold;
+            box-shadow: 0px 2.99332px 4.48998px rgba(255, 255, 255, 0.35);
+            border-radius: 30.6816px;
+            display: none;
+            font-size: 14px;
+            padding: .5em 3em;
         }
  
     }
@@ -103,6 +150,7 @@ nav {
             height: 5px;
             background-color: black;
             border-radius: 10px;
+            transition: .3s ease-in-out;
         }
         .bar:nth-child(2) {
             margin: 3px 0;
@@ -226,9 +274,10 @@ nav {
             @include lg-screen {
                 text-align: left;
                 margin-left: 70px;
+                width: 70%;
             }
             @include xxlg-screen() {
-                width: 50%;
+                width: 60%;
             }
         }
     } 
@@ -243,12 +292,15 @@ nav {
     background: url(images/Left\ illustration.png), url(images/AI\ illustration\ peoplelast.png) bottom right,#D9D9D9;
     background-repeat: no-repeat;
     .services__body  {
-
      h1 {
         color: #5700B6;
     }
     .service_section {
          margin-bottom: 2em;
+         width: 100%;
+         @include sm-screen() {
+            width: 700px;
+         }
         .service_section__head  {
             display: flex;
             justify-content: space-around;
@@ -256,9 +308,10 @@ nav {
             cursor: pointer;
             padding: 20px 25px 30px 25px;
             background: linear-gradient(180deg, rgba(245, 246, 255, 0.7) 0%, rgba(248, 248, 248, 0) 100%);
-            backdrop-filter: blur(10.5px);
-            /* Note: backdrop-filter has minimal browser support */            
-            border-radius: 20px;    
+            backdrop-filter: blur(10.5px);  
+            @include sm-screen() {
+             border-radius: 20px;
+            }  
             h3 {
             font-size: 21px;
             margin-left: 30px;
@@ -272,14 +325,12 @@ nav {
         .service_body {
             padding: 1em;
             display: none;
-            background-color: gray;
+            background-color: #f5f5f5;
             @include xlg-screen {
               background-color: transparent;
             }
             p {
-                @include xlg-screen {
                     color: #000000;
-                }
             }
         }
     }
@@ -440,12 +491,12 @@ nav {
     font-size: 5em;
 }
 .active {
-    transition: .3s ease-in;
+    // transition: .3s ease-in-out;
 }
 footer {
     background-color: $ParaFontColor;
     p {
-
+       margin-top: 10px;
     }
     .footer__navlinks {
         margin-bottom: 10px;
@@ -460,186 +511,22 @@ footer {
 
 // ++++++++++++ MEDIA QUERIES FOR MOBILE  STARTS HERE ++++++++++++++
 
-// @media (max-width:768px) {
-//     header {
-//         nav {
-//             h1 {
-//                 font-size: 30px;
-//                 color: red($color: #000000);
 
-//             }
-//             .menu__items {
-//                 position: absolute;
-//                 top: 0px;
-//                 right: 100%;
-                
-//                 li   {
-//                 padding: 10px 0;
-//                  a {
-//                     color: white;
-//                  }
-//                 }
-//             }
-//             .menu__itemsActive {
-//                 right: 0;
-//                 flex-direction: column;
-//                 width: 100%;
-//                 padding: 1em 0;
-//                 background-color: #000000;
-//                 text-align: center;
-//                 border-radius: 10px;
-//                 transition: .3s ease-in ;
-//             }
-
-//             .nav__btn {
-//                 display: none;
-//             }
-//             .menuBar {
-//             display: block;
-            
-//             .bar {
-//                 width: 30px;
-//                 height: 3px;
-//                 border-radius: 1px;
-//                 margin-top: 4px;
-//                 background-color: #000000;
-//                 border: none;
-//             }
-            
-//          }
-//          .menuBarActive {
-//             position: absolute;
-//             top: 10px;
-//             right: 16px;
-                        
-//             .bar.activated {
-//                 background-color: rgb(255, 0, 0);
-//                 transition: .3s ease-out;
-//             }
-//             .bar.activated:nth-child(1) {
-//                 transform: translateY(9px) rotate(45deg);
-//             }
-//             .bar.activated:nth-child(2) {
-//                 display: none;
-//             }
-//             .bar.activated:nth-child(3) {
-//                 transform: translateY(2px) rotate(-45deg);
-//             }
-//          }
-//         }
-//        .hero {
-//         .hero_content {
-//             h1 {
-//                 font-size: 3em;
-//                 margin-top: 2em;
-//                 width: 100%;
-//                 padding: 0 10px;
-//             }
-//         }        
-//        }
-//        .header_image  {
-//         display: none;
-//     }
-//     }
-//     .about__section {
-//         padding: 1em 0;
-//         min-height: 50vh;
-//         .about_section_vectors  {
-//             display: none;
-
-//         }
-//         .about_section_content {
-//             text-align: center;
-//             position: static;
-//             width: 90%;
-//             p {
-//                 width: 90%;
-//                 margin-top:20px;
-//                 font-size: 26px;
-//             }
-//             .about_heading {
-//                 font-size: 50px;
-//                 color: #D6383D;
-//             }
-            
-//         }
-//     }
-//    .services__section {
-//     .services__body  {
-//         h1 {
-//             font-size: 2em;
-//         }
-//         .service_section {
-//             width: 100%;
-//             .service_body {
-//                 background-color: #D9D9D9;
-//             }
-//         }
-//     }
-//    }
-//    .contact__section {
-//         min-height: 100vh;
-//         position: relative;
-//         padding: 8em 0;
-//         background-image: none;
-//        .contact_section__heading {
-//         position: absolute;
-//         top: 10px;
-//         margin-left: 0;
-
-//         .one {
-//             width: 40px;
-            
-//         }
-//         .two {
-//             width: 20px;
-//             margin: 0 4px;
-//         }
-        
-//        }
-//     .contact_section__body {
-//         flex-direction: column;
-//         min-height: 100vh;
-
-
-//          .fa-paper-plane {
-//             font-size: 3em;
-//          }
-//         .contact_section__bodyLeft {
-//             .contact_section__bodyLeft_heading {
-//                 font-size: 20px;
-//             }
-//         }
-//          .contact_section__bodyRight {
-//                 width: 100%;
-//                 display: flex;
-//                 .contact_section__bodyRight_contactForm {
-//                 border-radius: 20px;
-//                 margin-top: 2em;
-//                 h1 {
-//                     font-size: 2em;
-//                 }
-//                 form {
-//                     width: 100%;
-//                     margin-top: 0;
-//                     padding: 0;
-//                     gap: 1;
-//                     input, textarea, button {
-//                         width: 90%
-//                     }
-//                     button {
-//                         padding-bottom: 20px;
-//                     }
-
-//                 }
-//             }
-//          }
-        
-//     }
-//    }
-//    footer {
-//     gap: 50px;
-//    }
-// }
-
-// ++++++++++++ MEDIA QUERIES FOR TABLETS  STARTS HERE ++++++++++++++
+    header {
+        nav {   
+         .menuBarActive {
+            .bar.activated {
+                background-color: rgb(255, 0, 0);
+            }
+            .bar.activated:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            .bar.activated:nth-child(2) {
+                transform: translateY(1px) rotate(-45deg);
+            }
+            .bar.activated:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+         }
+        }
+    } 

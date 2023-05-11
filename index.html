@@ -20,7 +20,7 @@
   <nav class="px-3 py-5 sm:px-12 sm:py-8 ">
      <div class="fluid flex justify-between items-center">
         <h1 class="text-2xl sm:text-3xl font-black">Apolarity Studios.</h1>
-            <div class="menu__items hidden flex justify-between  lg:flex">
+            <div class="menu__items flex justify-between">
                 <li class="menu_item list-none">
                 <a href="#home" >Home</a>
                 </li>
@@ -32,6 +32,9 @@
                 </li>
                 <li class="menu_item   list-none">
                     <a href="#projects">Our Projects</a>
+                </li>
+                <li class="menu_item lg:hidden list-none">
+                    <a href="#contact" class="text-white">Order Now</a>
                 </li>
             </div>
             <div class="nav__btn hidden md:block">
@@ -47,7 +50,7 @@
     <div class="hero fluid">
         <div class="hero_content"> 
         <h1 class="font-black text-center"><span>Apolarity Studios</span> Designing the Future of your Business</h1>
-        <button class="mt-10">GET STARTED</button>
+        <button class="mt-10"><a href="#contact">GET STARTED</a></button>
         </div>
     </div>
 <figure class="header_image">
@@ -179,14 +182,15 @@
 
     <!-- ++++++++++++ FOOTER SECTION STARTS HERE +++++++++ -->
 
-<footer class="p-5 flex flex-col-reverse justify-around items-center text-white" >
-    <p class="capitalize text-sm">copyright 2022-25 All rights reserved</p>
+<footer class="p-5 flex flex-col md:py-8 lg:flex-row justify-around items-center text-white" >
     <div class="footer__navlinks flex gap-5">
         <a href="#home">Home</a>
         <a href="#about">Work</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
     </div>
+    <p class="capitalize text-sm">copyright 2022-25 All rights reserved</p>
+    <p>Developed by <span class="font-bold text-[#D6383D]"><a href="https://www.linkedin.com/in/afaqalii/" target="_blank" class="my-5">Afaq Ali</a></span></p>
 </footer>
 <script src="landingPage.js"></script>
 </body>

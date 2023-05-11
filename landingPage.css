@@ -22,22 +22,6 @@ header {
   background-image: url("images/VectorhomePage.png");
   background-color: #F5F6FF;
 }
-header .menu__items > li > a {
-  font-size: 20px;
-  padding: 0 2em;
-  color: #000000;
-  font-weight: 400;
-}
-@media (min-width: 1024px) {
-  header .menu__items > li > a {
-    padding: 0 1.5em;
-  }
-}
-@media (min-width: 1280px) {
-  header .menu__items > li > a {
-    padding: 0 2em;
-  }
-}
 header nav {
   display: flex;
   align-items: center;
@@ -47,18 +31,94 @@ header nav {
   background-color: #F5F6FF;
   z-index: 10;
 }
-header nav .nav__btn > button {
+header nav .menu__items {
+  position: absolute;
+  right: 100%;
+  top: 60px;
+  transition: 0.3s ease-in-out;
+}
+@media (min-width: 1024px) {
+  header nav .menu__items {
+    position: static;
+  }
+}
+@media (min-width: 648px) {
+  header nav .menu__items {
+    top: 70px;
+  }
+}
+header nav .menu__items li {
+  padding: 15px;
+}
+@media (min-width: 648px) {
+  header nav .menu__items li {
+    padding-left: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  header nav .menu__items li {
+    padding-left: 0;
+  }
+}
+header nav .menu__items li a {
+  color: white;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  header nav .menu__items li a {
+    font-size: 20px;
+    padding: 0 1.5em;
+    color: #000000;
+    font-weight: 400;
+  }
+}
+@media (min-width: 1280px) {
+  header nav .menu__items li a {
+    padding: 0 2em;
+  }
+}
+header nav .menu__items li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #D6383D;
+  top: 30px;
+  left: 0;
+}
+@media (min-width: 1024px) {
+  header nav .menu__items li a::after {
+    width: 0%;
+  }
+}
+header nav .menu__items li a::after:hover {
+  width: 100%;
+}
+header nav .menu__itemsActive {
+  right: 0;
+  flex-direction: column;
+  width: 100%;
+  padding: 2em 0;
+  background-color: #000000;
+  text-align: left;
+}
+header nav .nav__btn {
+  padding: 0 1em;
+}
+header nav .nav__btn button {
   background-color: #D6383D;
   color: white;
   font-weight: 900;
-  padding: 0.5em 1em;
   box-shadow: 0px 2.99332px 4.48998px rgba(255, 255, 255, 0.35);
   border-radius: 30.6816px;
   display: none;
+  font-size: 14px;
+  padding: 0.5em 3em;
 }
 @media (min-width: 1024px) {
-  header nav .nav__btn > button {
+  header nav .nav__btn button {
     display: block;
+    padding: 1em 3em;
   }
 }
 header nav .menuBar .bar {
@@ -66,6 +126,7 @@ header nav .menuBar .bar {
   height: 5px;
   background-color: black;
   border-radius: 10px;
+  transition: 0.3s ease-in-out;
 }
 header nav .menuBar .bar:nth-child(2) {
   margin: 3px 0;
@@ -196,11 +257,12 @@ header .header_image img {
   .about__section .about_section_content .about_para {
     text-align: left;
     margin-left: 70px;
+    width: 70%;
   }
 }
 @media (min-width: 1536px) {
   .about__section .about_section_content .about_para {
-    width: 50%;
+    width: 60%;
   }
 }
 
@@ -215,6 +277,12 @@ header .header_image img {
 }
 .services__section .services__body .service_section {
   margin-bottom: 2em;
+  width: 100%;
+}
+@media (min-width: 648px) {
+  .services__section .services__body .service_section {
+    width: 700px;
+  }
 }
 .services__section .services__body .service_section .service_section__head {
   display: flex;
@@ -225,8 +293,11 @@ header .header_image img {
   background: linear-gradient(180deg, rgba(245, 246, 255, 0.7) 0%, rgba(248, 248, 248, 0) 100%);
   -webkit-backdrop-filter: blur(10.5px);
           backdrop-filter: blur(10.5px);
-  /* Note: backdrop-filter has minimal browser support */
-  border-radius: 20px;
+}
+@media (min-width: 648px) {
+  .services__section .services__body .service_section .service_section__head {
+    border-radius: 20px;
+  }
 }
 .services__section .services__body .service_section .service_section__head h3 {
   font-size: 21px;
@@ -240,17 +311,15 @@ header .header_image img {
 .services__section .services__body .service_section .service_body {
   padding: 1em;
   display: none;
-  background-color: gray;
+  background-color: #f5f5f5;
 }
 @media (min-width: 1280px) {
   .services__section .services__body .service_section .service_body {
     background-color: transparent;
   }
 }
-@media (min-width: 1280px) {
-  .services__section .services__body .service_section .service_body p {
-    color: #000000;
-  }
+.services__section .services__body .service_section .service_body p {
+  color: #000000;
 }
 
 .contact-section-wrapper {
@@ -424,12 +493,11 @@ header .header_image img {
   font-size: 5em;
 }
 
-.active {
-  transition: 0.3s ease-in;
-}
-
 footer {
   background-color: #141414;
+}
+footer p {
+  margin-top: 10px;
 }
 footer .footer__navlinks {
   margin-bottom: 10px;
@@ -437,4 +505,17 @@ footer .footer__navlinks {
 footer .footer__navlinks a {
   font-size: 18px;
   font-weight: bold;
+}
+
+header nav .menuBarActive .bar.activated {
+  background-color: rgb(255, 0, 0);
+}
+header nav .menuBarActive .bar.activated:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+header nav .menuBarActive .bar.activated:nth-child(2) {
+  transform: translateY(1px) rotate(-45deg);
+}
+header nav .menuBarActive .bar.activated:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }/*# sourceMappingURL=landingPage.css.map */
